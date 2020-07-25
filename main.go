@@ -13,7 +13,7 @@ func init() {
 }
 
 func main() {
-	err := tpl.ExecuteTemplate(os.Stdout, "passData.gohtml", 32)
+	err := tpl.ExecuteTemplate(os.Stdout, "passData.gohtml", `less is more`)
 	if err != nil {
 		log.Fatalln(err)
 	}
