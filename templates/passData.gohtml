@@ -7,8 +7,11 @@
 </head>
 
 <body>
-    {{$wisdom := .}}
-    <h1>The meaning of life: {{$wisdom}}</h1>
+    <ul>
+    {{range $key, $value := .}}
+    <li>{{$key}} ages {{$value}}</li>
+    {{end}}
+    </ul>
 </body>
 
 </html>
