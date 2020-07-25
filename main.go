@@ -12,11 +12,6 @@ func init() {
 	tpl = template.Must(template.ParseGlob("templates/*"))
 }
 
-type person struct {
-	Name string
-	Age  int
-}
-
 func main() {
 	ppl := map[string]int{
 		"Ravi": 35,
@@ -27,7 +22,10 @@ func main() {
 		log.Fatalln(err)
 	}
 
-	ravi := person{
+	ravi := struct {
+		Name string
+		Age  int
+	}{
 		Name: "Ravi",
 		Age:  35,
 	}
