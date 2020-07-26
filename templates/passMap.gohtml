@@ -9,7 +9,7 @@
 <body>
     <ul>
     {{range $key, $value := .}}
-        <li>{{$key}} ages {{$value}}</li>
+        <li>{{uc $key}} ages {{$value}}</li>
     {{end}}
     </ul>
 </body>

@@ -3,13 +3,23 @@ package main
 import (
 	"log"
 	"os"
+	"strings"
 	"text/template"
 )
 
 var tpl *template.Template
+var fm = template.FuncMap{
+	"uc": strings.ToUpper,
+	"ft": firstThree,
+}
 
 func init() {
-	tpl = template.Must(template.ParseGlob("templates/*"))
+	tpl = template.Must(template.New("").Funcs(fm).ParseGlob("templates/*"))
+}
+
+func firstThree(s string) string {
+	s = strings.TrimSpace(s)
+	return s[:3]
 }
 
 func main() {
